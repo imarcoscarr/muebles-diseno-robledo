@@ -1,0 +1,7 @@
+{
+  "name": "Muebles & Diseño Robledo",
+  "description": "Web premium para carpintería artesanal de lujo con catálogo exclusivo y consultor de maderas IA.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
