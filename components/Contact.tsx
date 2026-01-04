@@ -21,7 +21,7 @@ const Contact: React.FC<ContactProps> = ({ prefilledProduct = '' }) => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Simulate sending
+    // Simulamos el envío
     setSubmitted(true);
     setTimeout(() => setSubmitted(false), 5000);
   };
@@ -33,7 +33,7 @@ const Contact: React.FC<ContactProps> = ({ prefilledProduct = '' }) => {
           <div>
             <h2 className="text-4xl font-serif font-bold mb-6">Empecemos su proyecto</h2>
             <p className="text-white/70 text-lg mb-10">
-              Cada mueble Robledo comienza con una conversación. Cuéntenos qué tiene en mente y le ayudaremos a hacerlo realidad.
+              Cada mueble Robledo comienza con una conversación. Cuéntenos qué tiene en mente y le ayudaremos a hacerlo realidad de forma artesanal.
             </p>
             
             <div className="space-y-8">
@@ -82,7 +82,7 @@ const Contact: React.FC<ContactProps> = ({ prefilledProduct = '' }) => {
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-xs font-bold uppercase text-gray-400 mb-2">Nombre Completo</label>
+                    <label className="block text-xs font-bold uppercase text-gray-400 mb-2">Nombre Completo *</label>
                     <input 
                       required
                       type="text" 
@@ -92,7 +92,7 @@ const Contact: React.FC<ContactProps> = ({ prefilledProduct = '' }) => {
                     />
                   </div>
                   <div>
-                    <label className="block text-xs font-bold uppercase text-gray-400 mb-2">Email</label>
+                    <label className="block text-xs font-bold uppercase text-gray-400 mb-2">Email *</label>
                     <input 
                       required
                       type="email" 
@@ -104,10 +104,15 @@ const Contact: React.FC<ContactProps> = ({ prefilledProduct = '' }) => {
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-xs font-bold uppercase text-gray-400 mb-2">Teléfono</label>
+                    <label className="block text-xs font-bold uppercase text-[#5D4037] mb-2 flex items-center gap-1">
+                      <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 004.487 4.487l.773-1.548a1 1 0 011.06-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
+                      Teléfono (Obligatorio) *
+                    </label>
                     <input 
+                      required
                       type="tel" 
-                      className="w-full border-b-2 border-gray-100 py-2 focus:border-forest outline-none transition-colors"
+                      className="w-full border-b-2 border-[#5D4037] py-2 focus:border-forest outline-none transition-colors font-bold text-forest bg-brown-50"
+                      placeholder="Para cerrar detalles rápido"
                       value={formData.phone}
                       onChange={e => setFormData({...formData, phone: e.target.value})}
                     />
@@ -135,9 +140,9 @@ const Contact: React.FC<ContactProps> = ({ prefilledProduct = '' }) => {
                 </div>
                 <button 
                   type="submit" 
-                  className="w-full py-4 bg-forest text-white font-bold uppercase tracking-widest text-sm hover:bg-forest/90 transition-all shadow-lg"
+                  className="w-full py-4 bg-[#1B3022] text-white font-bold uppercase tracking-widest text-sm hover:bg-[#2c4a35] transition-all shadow-lg transform hover:-translate-y-1"
                 >
-                  Enviar Solicitud
+                  Enviar Solicitud de Presupuesto
                 </button>
               </form>
             )}
@@ -145,7 +150,7 @@ const Contact: React.FC<ContactProps> = ({ prefilledProduct = '' }) => {
         </div>
       </div>
       
-      {/* Decorative background element */}
+      {/* Elementos decorativos de fondo */}
       <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -mr-32 -mt-32"></div>
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-black/10 rounded-full -ml-48 -mb-48"></div>
     </div>

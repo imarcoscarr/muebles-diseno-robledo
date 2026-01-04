@@ -21,6 +21,15 @@
         .text-forest { color: #1B3022; }
         .bg-forest { background-color: #1B3022; }
         .border-forest { border-color: #1B3022; }
+        
+        /* Animaciones suaves */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
     </style>
 <script type="importmap">
 {
@@ -35,5 +44,7 @@
 </head>
 <body class="bg-cream text-gray-800">
     <div id="root"></div>
+    <!-- Script de entrada para React -->
+    <script type="module" src="index.tsx"></script>
 </body>
 </html>

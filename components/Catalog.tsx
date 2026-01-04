@@ -69,7 +69,7 @@ const Catalog: React.FC<CatalogProps> = ({ onBudgetRequest }) => {
               </div>
               <button 
                 onClick={() => onBudgetRequest(product.name)}
-                className="w-full py-3 bg-[#1B3022] text-white text-sm font-bold tracking-widest uppercase hover:bg-[#2c4a35] transition-colors"
+                className="w-full py-5 bg-[#1B3022] text-white text-sm font-bold tracking-[0.2em] uppercase hover:bg-[#2c4a35] transition-all transform hover:scale-[1.01] shadow-lg ring-offset-2 focus:ring-2 focus:ring-[#1B3022]"
               >
                 Solicitar Presupuesto
               </button>
