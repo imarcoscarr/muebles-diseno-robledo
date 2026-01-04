@@ -4,43 +4,59 @@ import React from 'react';
 const Hero: React.FC = () => {
   return (
     <div id="inicio" className="relative h-screen flex items-center justify-center overflow-hidden">
-      {/* Background with overlay */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center transition-transform duration-[10s] hover:scale-110" 
-        style={{ backgroundImage: "url('https://images.unsplash.com/photo-1581428982868-e410dd047a90?q=80&w=2070&auto=format&fit=crop')" }}
-      >
-        <div className="absolute inset-0 bg-black/40"></div>
+      {/* Capa de fondo con zoom sutil */}
+      <div className="absolute inset-0 z-0">
+        <div 
+          className="w-full h-full bg-cover bg-center animate-zoom" 
+          style={{ backgroundImage: "url('https://images.unsplash.com/photo-1611269154421-4e27233ac5c7?q=80&w=2000&auto=format&fit=crop')" }}
+        ></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-black/70"></div>
       </div>
 
-      <div className="relative text-center px-4 max-w-4xl mx-auto text-white">
-        <p className="uppercase tracking-[0.3em] text-sm mb-4 font-light opacity-90 animate-fade-in">Mobiliario de Lujo desde 1954</p>
-        <h1 className="text-5xl md:text-7xl font-serif font-bold mb-6 leading-tight">
-          Muebles con alma para hogares únicos
+      <div className="relative z-10 text-center px-4 max-w-5xl mx-auto text-white animate-hero">
+        <div className="inline-block mb-8 overflow-hidden">
+          <p className="uppercase tracking-[0.6em] text-[10px] md:text-xs font-medium opacity-70">
+            Artesanía en Madera Noble · Soria 1954
+          </p>
+        </div>
+        
+        <h1 className="text-5xl md:text-8xl font-serif font-bold mb-8 leading-[1.05] tracking-tight">
+          La Poesía de lo <br /><span className="italic font-normal text-accent">Hecho a Mano</span>
         </h1>
-        <p className="text-lg md:text-xl mb-10 font-light max-w-2xl mx-auto opacity-80 leading-relaxed">
-          Tercera generación de artesanos dedicados a transformar el roble y el nogal en piezas eternas.
+        
+        <p className="text-base md:text-xl mb-12 font-light max-w-2xl mx-auto opacity-80 leading-relaxed tracking-wide">
+          Piezas que trascienden el tiempo, esculpidas por la tercera generación de la familia Robledo con maderas de gestión sostenible.
         </p>
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+        
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
           <a 
             href="#catalogo" 
-            className="w-full sm:w-auto px-8 py-4 bg-white text-[#1B3022] font-semibold rounded-sm hover:bg-[#FDFBF7] transition-all transform hover:-translate-y-1 shadow-lg"
+            className="group relative px-12 py-5 bg-white text-forest overflow-hidden transition-all shadow-xl hover:shadow-accent/20"
           >
-            Explorar Catálogo
+            <div className="absolute inset-0 w-0 bg-accent transition-all duration-300 group-hover:w-full"></div>
+            <span className="relative z-10 font-bold tracking-widest text-xs uppercase group-hover:text-white transition-colors">
+              Explorar Colección
+            </span>
           </a>
           <a 
             href="#taller" 
-            className="w-full sm:w-auto px-8 py-4 border-2 border-white text-white font-semibold rounded-sm hover:bg-white/10 transition-all"
+            className="px-12 py-5 border border-white/40 text-white backdrop-blur-sm font-bold tracking-widest text-xs uppercase hover:bg-white hover:text-forest transition-all"
           >
-            Nuestro Proceso
+            Nuestro Legado
           </a>
         </div>
       </div>
 
-      {/* Scroll indicator */}
-      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-        </svg>
+      {/* Indicador de scroll minimalista */}
+      <div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 opacity-40">
+        <span className="text-[9px] uppercase tracking-[0.4em] text-white font-bold">Descubrir</span>
+        <div className="w-[1px] h-16 bg-gradient-to-b from-white to-transparent"></div>
+      </div>
+
+      {/* Enlaces sociales laterales */}
+      <div className="absolute left-8 bottom-12 hidden lg:flex flex-col gap-6 text-white/30 text-[10px] tracking-widest uppercase [writing-mode:vertical-lr] rotate-180">
+        <a href="#" className="hover:text-accent transition-colors">Instagram</a>
+        <a href="#" className="hover:text-accent transition-colors">Pinterest</a>
       </div>
     </div>
   );

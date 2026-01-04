@@ -1,39 +1,88 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muebles & Diseño Robledo | Carpintería Artesanal</title>
+    <title>Muebles & Diseño Robledo | Carpintería Artesanal de Lujo</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --forest: #1B3022;
+            --wood-dark: #3D2B1F;
+            --cream: #FDFBF7;
+            --accent: #C5A059; /* Oro Viejo */
+        }
         body {
-            font-family: 'Lato', sans-serif;
+            font-family: 'Montserrat', sans-serif;
             scroll-behavior: smooth;
+            background-color: var(--cream);
+            color: var(--wood-dark);
         }
         h1, h2, h3, .font-serif {
             font-family: 'Playfair Display', serif;
         }
-        .bg-wood-dark { background-color: #3D2B1F; }
-        .bg-wood-medium { background-color: #5D4037; }
-        .bg-cream { background-color: #FDFBF7; }
-        .text-forest { color: #1B3022; }
-        .bg-forest { background-color: #1B3022; }
-        .border-forest { border-color: #1B3022; }
+        .text-accent { color: var(--accent); }
+        .bg-accent { background-color: var(--accent); }
+        .bg-forest { background-color: var(--forest); }
+        .text-forest { color: var(--forest); }
         
-        /* Animaciones suaves */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
+        /* Animaciones de Scroll Reveal */
+        .reveal {
+            opacity: 0;
+            transform: translateY(25px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        .animate-fade-in {
-            animation: fadeIn 0.8s ease-out forwards;
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
         }
+
+        /* Scrollbar Personalizada */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: var(--cream); }
+        ::-webkit-scrollbar-thumb { background: var(--forest); border-radius: 10px; }
+
+        @keyframes fadeInScale {
+            from { opacity: 0; transform: scale(1.05); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        .animate-hero { animation: fadeInScale 1.5s ease-out forwards; }
+        
+        @keyframes subtleZoom {
+            from { transform: scale(1); }
+            to { transform: scale(1.1); }
+        }
+        .animate-zoom { animation: subtleZoom 30s infinite alternate linear; }
     </style>
+<script type="importmap">
+{
+  "imports": {
+    "@google/genai": "https://esm.sh/@google/genai@^1.34.0",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/"
+  }
+}
+</script>
 </head>
-<body class="bg-cream text-gray-800">
+<body class="selection:bg-accent selection:text-white overflow-x-hidden">
     <div id="root"></div>
-    <!-- Script de entrada para React -->
-    <script type="module" src="./index.tsx"></script>
+    <script type="module" src="index.tsx"></script>
+    <script>
+        // Observador para efectos de revelación al hacer scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        window.addEventListener('load', () => {
+            document.querySelectorAll('.reveal').forEach(r => observer.observe(r));
+        });
+    </script>
 </body>
 </html>

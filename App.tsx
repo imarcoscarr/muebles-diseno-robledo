@@ -7,6 +7,8 @@ import Workshop from './components/Workshop';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import WoodConsultant from './components/WoodConsultant';
+import Sustainability from './components/Sustainability';
+import Testimonials from './components/Testimonials';
 
 const App: React.FC = () => {
   const [selectedProductForBudget, setSelectedProductForBudget] = useState<string | null>(null);
@@ -20,24 +22,28 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen overflow-x-hidden">
       <Navbar />
       <main>
         <Hero />
         
-        <section id="consultor" className="py-16 bg-[#1B3022]/5">
+        <section id="consultor" className="py-24 bg-white relative">
            <div className="max-w-7xl mx-auto px-4">
               <WoodConsultant />
            </div>
         </section>
 
-        <section id="catalogo">
+        <section id="catalogo" className="bg-[#FDFBF7]">
           <Catalog onBudgetRequest={handleRequestBudget} />
         </section>
+
+        <Sustainability />
         
         <section id="taller">
           <Workshop />
         </section>
+
+        <Testimonials />
         
         <section id="contacto">
           <Contact prefilledProduct={selectedProductForBudget || ''} />

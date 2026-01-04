@@ -21,128 +21,114 @@ const Contact: React.FC<ContactProps> = ({ prefilledProduct = '' }) => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Simulamos el envío
     setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 5000);
+    setTimeout(() => setSubmitted(false), 8000);
   };
 
   return (
     <div className="py-24 bg-forest text-white overflow-hidden relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-          <div>
-            <h2 className="text-4xl font-serif font-bold mb-6">Empecemos su proyecto</h2>
-            <p className="text-white/70 text-lg mb-10">
-              Cada mueble Robledo comienza con una conversación. Cuéntenos qué tiene en mente y le ayudaremos a hacerlo realidad de forma artesanal.
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+          <div className="reveal">
+            <span className="text-accent text-[10px] uppercase tracking-[0.5em] font-bold block mb-4">Canal Directo</span>
+            <h2 className="text-4xl md:text-5xl font-serif font-bold mb-8 leading-tight">Iniciemos una <br /><span className="italic font-normal">conversación</span></h2>
+            <p className="text-white/60 text-lg mb-12 font-light leading-relaxed">
+              Cada mueble Robledo es un proyecto personal. Cuéntenos su visión y le acompañaremos en el proceso de creación de su pieza única.
             </p>
             
-            <div className="space-y-8">
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center shrink-0">
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            <div className="space-y-10">
+              <div className="flex items-start gap-6 group">
+                <div className="w-14 h-14 rounded-none bg-white/5 border border-white/10 flex items-center justify-center shrink-0 group-hover:border-accent transition-colors">
+                  <svg className="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
                 </div>
                 <div>
-                  <p className="font-bold">Nuestro Taller</p>
-                  <p className="text-white/60">Cno. Viejo de Burgos, Nave 4, 42004 Soria, España</p>
+                  <p className="text-xs font-bold uppercase tracking-widest mb-1">El Taller</p>
+                  <p className="text-white/40 text-sm font-light leading-relaxed">Camino Viejo de Burgos, Nave 4,<br />42004 Soria, España</p>
                 </div>
               </div>
               
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center shrink-0">
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+              <div className="flex items-start gap-6 group">
+                <div className="w-14 h-14 rounded-none bg-white/5 border border-white/10 flex items-center justify-center shrink-0 group-hover:border-accent transition-colors">
+                  <svg className="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
                 </div>
                 <div>
-                  <p className="font-bold">Teléfono & WhatsApp</p>
-                  <p className="text-white/60">+34 975 12 34 56</p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center shrink-0">
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-                </div>
-                <div>
-                  <p className="font-bold">Email</p>
-                  <p className="text-white/60">presupuestos@mueblesrobledo.com</p>
+                  <p className="text-xs font-bold uppercase tracking-widest mb-1">Teléfono & WhatsApp</p>
+                  <p className="text-white/40 text-sm font-light">+34 975 12 34 56</p>
                 </div>
               </div>
             </div>
           </div>
 
-          <div className="bg-white rounded-sm p-8 md:p-12 shadow-2xl text-gray-800">
+          <div className="bg-white p-10 md:p-16 shadow-2xl text-forest reveal" style={{ transitionDelay: '0.2s' }}>
             {submitted ? (
-              <div className="h-full flex flex-col items-center justify-center text-center space-y-4 animate-fade-in">
-                <div className="w-20 h-20 bg-green-100 text-green-600 rounded-full flex items-center justify-center mb-4">
-                  <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7"/></svg>
+              <div className="h-[400px] flex flex-col items-center justify-center text-center animate-fade-in">
+                <div className="w-20 h-20 bg-accent/10 text-accent rounded-full flex items-center justify-center mb-8">
+                  <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"/></svg>
                 </div>
-                <h3 className="text-2xl font-serif font-bold text-forest">¡Mensaje Recibido!</h3>
-                <p className="text-gray-600">Nos pondremos en contacto con usted en menos de 24 horas para discutir su presupuesto.</p>
+                <h3 className="text-3xl font-serif font-bold mb-4">Solicitud Recibida</h3>
+                <p className="text-gray-400 font-light leading-relaxed">Nuestro equipo revisará su proyecto y le contactará en menos de 24 horas laborables.</p>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block text-xs font-bold uppercase text-gray-400 mb-2">Nombre Completo *</label>
+              <form onSubmit={handleSubmit} className="space-y-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <div className="space-y-2">
+                    <label className="text-[10px] font-bold uppercase tracking-widest text-gray-400">Nombre Completo</label>
                     <input 
                       required
                       type="text" 
-                      className="w-full border-b-2 border-gray-100 py-2 focus:border-forest outline-none transition-colors"
+                      className="w-full bg-transparent border-b border-gray-100 py-3 focus:border-accent outline-none transition-colors text-sm font-light"
                       value={formData.name}
                       onChange={e => setFormData({...formData, name: e.target.value})}
                     />
                   </div>
-                  <div>
-                    <label className="block text-xs font-bold uppercase text-gray-400 mb-2">Email *</label>
+                  <div className="space-y-2">
+                    <label className="text-[10px] font-bold uppercase tracking-widest text-gray-400">Correo Electrónico</label>
                     <input 
                       required
                       type="email" 
-                      className="w-full border-b-2 border-gray-100 py-2 focus:border-forest outline-none transition-colors"
+                      className="w-full bg-transparent border-b border-gray-100 py-3 focus:border-accent outline-none transition-colors text-sm font-light"
                       value={formData.email}
                       onChange={e => setFormData({...formData, email: e.target.value})}
                     />
                   </div>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block text-xs font-bold uppercase text-[#5D4037] mb-2 flex items-center gap-1">
-                      <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 004.487 4.487l.773-1.548a1 1 0 011.06-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
-                      Teléfono (Obligatorio) *
-                    </label>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <div className="space-y-2">
+                    <label className="text-[10px] font-bold uppercase tracking-widest text-accent">Teléfono (Prioridad)</label>
                     <input 
                       required
                       type="tel" 
-                      className="w-full border-b-2 border-[#5D4037] py-2 focus:border-forest outline-none transition-colors font-bold text-forest bg-brown-50"
-                      placeholder="Para cerrar detalles rápido"
+                      className="w-full bg-transparent border-b-2 border-accent/20 py-3 focus:border-accent outline-none transition-colors text-sm font-bold"
+                      placeholder="+34 ..."
                       value={formData.phone}
                       onChange={e => setFormData({...formData, phone: e.target.value})}
                     />
                   </div>
-                  <div>
-                    <label className="block text-xs font-bold uppercase text-gray-400 mb-2">Pieza de Interés</label>
+                  <div className="space-y-2">
+                    <label className="text-[10px] font-bold uppercase tracking-widest text-gray-400">Pieza de Interés</label>
                     <input 
                       type="text" 
-                      placeholder="Ej: Mesa Robledo Imperial"
-                      className="w-full border-b-2 border-gray-100 py-2 focus:border-forest outline-none transition-colors"
+                      className="w-full bg-transparent border-b border-gray-100 py-3 focus:border-accent outline-none transition-colors text-sm font-light"
                       value={formData.product}
                       onChange={e => setFormData({...formData, product: e.target.value})}
                     />
                   </div>
                 </div>
-                <div>
-                  <label className="block text-xs font-bold uppercase text-gray-400 mb-2">Detalles del Proyecto</label>
+                <div className="space-y-2">
+                  <label className="text-[10px] font-bold uppercase tracking-widest text-gray-400">Mensaje o Medidas Específicas</label>
                   <textarea 
                     rows={4}
-                    className="w-full border-2 border-gray-100 p-3 focus:border-forest outline-none transition-colors rounded-sm"
-                    placeholder="Cuéntenos medidas, tipo de madera o cualquier detalle..."
+                    className="w-full bg-gray-50 border-none p-4 focus:ring-1 focus:ring-accent outline-none transition-all text-sm font-light"
+                    placeholder="Describa el mueble de sus sueños..."
                     value={formData.message}
                     onChange={e => setFormData({...formData, message: e.target.value})}
                   ></textarea>
                 </div>
                 <button 
                   type="submit" 
-                  className="w-full py-4 bg-[#1B3022] text-white font-bold uppercase tracking-widest text-sm hover:bg-[#2c4a35] transition-all shadow-lg transform hover:-translate-y-1"
+                  className="w-full py-5 bg-forest text-white font-bold uppercase tracking-[0.4em] text-[11px] hover:bg-accent transition-all shadow-xl hover:-translate-y-1"
                 >
-                  Enviar Solicitud de Presupuesto
+                  Enviar Propuesta
                 </button>
               </form>
             )}
@@ -150,9 +136,9 @@ const Contact: React.FC<ContactProps> = ({ prefilledProduct = '' }) => {
         </div>
       </div>
       
-      {/* Elementos decorativos de fondo */}
-      <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -mr-32 -mt-32"></div>
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-black/10 rounded-full -ml-48 -mb-48"></div>
+      {/* Elementos decorativos abstractos */}
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-white/[0.02] rounded-full -mr-64 -mt-64"></div>
+      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-black/10 rounded-full -ml-48 -mb-48"></div>
     </div>
   );
 };
